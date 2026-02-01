@@ -1,0 +1,366 @@
+{
+    "symbol": "JNJ",
+    "status": "success",
+    "data": [
+        {
+            "date": "2025-12-31",
+            "shares_outstanding_diluted": "2439000000",
+            "shares_outstanding_basic": "2439000000"
+        },
+        {
+            "date": "2025-09-30",
+            "shares_outstanding_diluted": "2428600000",
+            "shares_outstanding_basic": "2428600000"
+        },
+        {
+            "date": "2025-06-30",
+            "shares_outstanding_diluted": "2419100000",
+            "shares_outstanding_basic": "2419100000"
+        },
+        {
+            "date": "2025-03-31",
+            "shares_outstanding_diluted": "2423800000",
+            "shares_outstanding_basic": "2423800000"
+        },
+        {
+            "date": "2025-03-30",
+            "shares_outstanding_diluted": "2423800000",
+            "shares_outstanding_basic": "2407200000"
+        },
+        {
+            "date": "2024-12-29",
+            "shares_outstanding_diluted": "2429100000",
+            "shares_outstanding_basic": "2407000000"
+        },
+        {
+            "date": "2024-09-29",
+            "shares_outstanding_diluted": "2427900000",
+            "shares_outstanding_basic": "2407200000"
+        },
+        {
+            "date": "2024-06-30",
+            "shares_outstanding_diluted": "2422000000",
+            "shares_outstanding_basic": "2406800000"
+        },
+        {
+            "date": "2024-03-31",
+            "shares_outstanding_diluted": "2430100000",
+            "shares_outstanding_basic": "2408200000"
+        },
+        {
+            "date": "2023-12-31",
+            "shares_outstanding_diluted": "2431400000",
+            "shares_outstanding_basic": "2407200000"
+        },
+        {
+            "date": "2023-10-01",
+            "shares_outstanding_diluted": "2549700000",
+            "shares_outstanding_basic": "2522900000"
+        },
+        {
+            "date": "2023-07-02",
+            "shares_outstanding_diluted": "2625700000",
+            "shares_outstanding_basic": "2598400000"
+        },
+        {
+            "date": "2023-04-02",
+            "shares_outstanding_diluted": "2605500000",
+            "shares_outstanding_basic": "2605500000"
+        },
+        {
+            "date": "2023-01-01",
+            "shares_outstanding_diluted": "2653100000",
+            "shares_outstanding_basic": "2614100000"
+        },
+        {
+            "date": "2022-10-02",
+            "shares_outstanding_diluted": "2661300000",
+            "shares_outstanding_basic": "2627900000"
+        },
+        {
+            "date": "2022-07-03",
+            "shares_outstanding_diluted": "2667900000",
+            "shares_outstanding_basic": "2629600000"
+        },
+        {
+            "date": "2022-04-03",
+            "shares_outstanding_diluted": "2666500000",
+            "shares_outstanding_basic": "2629200000"
+        },
+        {
+            "date": "2022-01-02",
+            "shares_outstanding_diluted": "2672200000",
+            "shares_outstanding_basic": "2631800000"
+        },
+        {
+            "date": "2021-10-03",
+            "shares_outstanding_diluted": "2674900000",
+            "shares_outstanding_basic": "2632600000"
+        },
+        {
+            "date": "2021-07-04",
+            "shares_outstanding_diluted": "2671600000",
+            "shares_outstanding_basic": "2632500000"
+        },
+        {
+            "date": "2021-04-04",
+            "shares_outstanding_diluted": "2672700000",
+            "shares_outstanding_basic": "2631600000"
+        },
+        {
+            "date": "2021-01-03",
+            "shares_outstanding_diluted": "2670400000",
+            "shares_outstanding_basic": "2632200000"
+        },
+        {
+            "date": "2020-09-27",
+            "shares_outstanding_diluted": "2669300000",
+            "shares_outstanding_basic": "2632500000"
+        },
+        {
+            "date": "2020-06-28",
+            "shares_outstanding_diluted": "2665500000",
+            "shares_outstanding_basic": "2632900000"
+        },
+        {
+            "date": "2020-03-29",
+            "shares_outstanding_diluted": "2671000000",
+            "shares_outstanding_basic": "2633700000"
+        },
+        {
+            "date": "2019-12-29",
+            "shares_outstanding_diluted": "2672900000",
+            "shares_outstanding_basic": "2631900000"
+        },
+        {
+            "date": "2019-09-29",
+            "shares_outstanding_diluted": "2669900000",
+            "shares_outstanding_basic": "2635200000"
+        },
+        {
+            "date": "2019-06-30",
+            "shares_outstanding_diluted": "2691700000",
+            "shares_outstanding_basic": "2652500000"
+        },
+        {
+            "date": "2019-03-31",
+            "shares_outstanding_diluted": "2698800000",
+            "shares_outstanding_basic": "2660800000"
+        },
+        {
+            "date": "2018-12-30",
+            "shares_outstanding_diluted": "2726000000",
+            "shares_outstanding_basic": "2678200000"
+        },
+        {
+            "date": "2018-09-30",
+            "shares_outstanding_diluted": "2727600000",
+            "shares_outstanding_basic": "2683200000"
+        },
+        {
+            "date": "2018-07-01",
+            "shares_outstanding_diluted": "2721300000",
+            "shares_outstanding_basic": "2682300000"
+        },
+        {
+            "date": "2018-04-01",
+            "shares_outstanding_diluted": "2731900000",
+            "shares_outstanding_basic": "2682200000"
+        },
+        {
+            "date": "2017-12-31",
+            "shares_outstanding_diluted": "2742000000",
+            "shares_outstanding_basic": "2684800000"
+        },
+        {
+            "date": "2017-10-01",
+            "shares_outstanding_diluted": "2737700000",
+            "shares_outstanding_basic": "2684600000"
+        },
+        {
+            "date": "2017-07-02",
+            "shares_outstanding_diluted": "2741500000",
+            "shares_outstanding_basic": "2691900000"
+        },
+        {
+            "date": "2017-04-02",
+            "shares_outstanding_diluted": "2754500000",
+            "shares_outstanding_basic": "2706600000"
+        },
+        {
+            "date": "2017-01-01",
+            "shares_outstanding_diluted": "2765800000",
+            "shares_outstanding_basic": "2714500000"
+        },
+        {
+            "date": "2016-10-02",
+            "shares_outstanding_diluted": "2785400000",
+            "shares_outstanding_basic": "2731600000"
+        },
+        {
+            "date": "2016-07-03",
+            "shares_outstanding_diluted": "2794200000",
+            "shares_outstanding_basic": "2745400000"
+        },
+        {
+            "date": "2016-04-03",
+            "shares_outstanding_diluted": "2795400000",
+            "shares_outstanding_basic": "2757200000"
+        },
+        {
+            "date": "2016-01-03",
+            "shares_outstanding_diluted": "2800300000",
+            "shares_outstanding_basic": "2762800000"
+        },
+        {
+            "date": "2015-09-27",
+            "shares_outstanding_diluted": "2807200000",
+            "shares_outstanding_basic": "2768400000"
+        },
+        {
+            "date": "2015-06-28",
+            "shares_outstanding_diluted": "2812000000",
+            "shares_outstanding_basic": "2772300000"
+        },
+        {
+            "date": "2015-03-29",
+            "shares_outstanding_diluted": "2826000000",
+            "shares_outstanding_basic": "2782600000"
+        },
+        {
+            "date": "2014-12-28",
+            "shares_outstanding_diluted": "2842000000",
+            "shares_outstanding_basic": "2794800000"
+        },
+        {
+            "date": "2014-09-28",
+            "shares_outstanding_diluted": "2864300000",
+            "shares_outstanding_basic": "2814400000"
+        },
+        {
+            "date": "2014-06-29",
+            "shares_outstanding_diluted": "2874200000",
+            "shares_outstanding_basic": "2826400000"
+        },
+        {
+            "date": "2014-03-30",
+            "shares_outstanding_diluted": "2874700000",
+            "shares_outstanding_basic": "2826800000"
+        },
+        {
+            "date": "2013-12-29",
+            "shares_outstanding_diluted": "2871000000",
+            "shares_outstanding_basic": "2820000000"
+        },
+        {
+            "date": "2013-09-29",
+            "shares_outstanding_diluted": "2881200000",
+            "shares_outstanding_basic": "2818400000"
+        },
+        {
+            "date": "2013-06-30",
+            "shares_outstanding_diluted": "2893000000",
+            "shares_outstanding_basic": "2809700000"
+        },
+        {
+            "date": "2013-03-31",
+            "shares_outstanding_diluted": "2858800000",
+            "shares_outstanding_basic": "2790200000"
+        },
+        {
+            "date": "2012-12-30",
+            "shares_outstanding_diluted": "2835400000",
+            "shares_outstanding_basic": "2771900000"
+        },
+        {
+            "date": "2012-09-30",
+            "shares_outstanding_diluted": "2818100000",
+            "shares_outstanding_basic": "2757400000"
+        },
+        {
+            "date": "2012-07-01",
+            "shares_outstanding_diluted": "2798200000",
+            "shares_outstanding_basic": "2747400000"
+        },
+        {
+            "date": "2012-04-01",
+            "shares_outstanding_diluted": "2774900000",
+            "shares_outstanding_basic": "2736900000"
+        },
+        {
+            "date": "2012-01-01",
+            "shares_outstanding_diluted": "2768400000",
+            "shares_outstanding_basic": "2728500000"
+        },
+        {
+            "date": "2011-10-02",
+            "shares_outstanding_diluted": "2778200000",
+            "shares_outstanding_basic": "2737000000"
+        },
+        {
+            "date": "2011-07-03",
+            "shares_outstanding_diluted": "2781300000",
+            "shares_outstanding_basic": "2740500000"
+        },
+        {
+            "date": "2011-04-03",
+            "shares_outstanding_diluted": "2772700000",
+            "shares_outstanding_basic": "2738400000"
+        },
+        {
+            "date": "2011-01-02",
+            "shares_outstanding_diluted": "2779200000",
+            "shares_outstanding_basic": "2743000000"
+        },
+        {
+            "date": "2010-10-03",
+            "shares_outstanding_diluted": "2786400000",
+            "shares_outstanding_basic": "2751600000"
+        },
+        {
+            "date": "2010-07-04",
+            "shares_outstanding_diluted": "2796000000",
+            "shares_outstanding_basic": "2756600000"
+        },
+        {
+            "date": "2010-04-04",
+            "shares_outstanding_diluted": "2797300000",
+            "shares_outstanding_basic": "2755400000"
+        },
+        {
+            "date": "2010-01-03",
+            "shares_outstanding_diluted": "2792700000",
+            "shares_outstanding_basic": "2758000000"
+        },
+        {
+            "date": "2009-09-27",
+            "shares_outstanding_diluted": "2793000000",
+            "shares_outstanding_basic": "2756300000"
+        },
+        {
+            "date": "2009-06-28",
+            "shares_outstanding_diluted": "2782000000",
+            "shares_outstanding_basic": "2756200000"
+        },
+        {
+            "date": "2009-03-29",
+            "shares_outstanding_diluted": "2789800000",
+            "shares_outstanding_basic": "2765900000"
+        },
+        {
+            "date": "2008-12-28",
+            "shares_outstanding_diluted": "2799000000",
+            "shares_outstanding_basic": "2774300000"
+        },
+        {
+            "date": "2008-09-28",
+            "shares_outstanding_diluted": "2831300000",
+            "shares_outstanding_basic": "2790900000"
+        },
+        {
+            "date": "2008-06-29",
+            "shares_outstanding_diluted": "2844800000",
+            "shares_outstanding_basic": "2809800000"
+        }
+    ]
+}

@@ -3,11 +3,33 @@ AlphaVantage PostgreSQL Database Setup
 Creates database schema and populates ticker table from merged_listings.csv
 """
 
+import os
+import sys
+import locale
+
+# Set Python's default encoding
+if sys.platform == 'win32':
+    # On Windows, ensure we use UTF-8
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
+# Set encoding environment variables before importing psycopg2
+os.environ['PGCLIENTENCODING'] = 'UTF8'
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+# Disable password file and service file to avoid encoding issues
+os.environ['PGPASSFILE'] = 'nul'  # Windows null device
+os.environ['PGSERVICEFILE'] = 'nul'
+# Disable system config directory
+os.environ['PGSYSCONFDIR'] = os.getcwd()
+# Force locale
+os.environ['LC_ALL'] = 'C.UTF-8'
+os.environ['LANG'] = 'C.UTF-8'
+
 import psycopg2
 from psycopg2 import sql
 import csv
 from datetime import datetime
-import os
+import traceback
 
 
 class AlphaVantageDB:
@@ -25,13 +47,9 @@ class AlphaVantageDB:
     def connect(self):
         """Connect to PostgreSQL database"""
         try:
-            self.conn = psycopg2.connect(
-                dbname=self.dbname,
-                user=self.user,
-                password=self.password,
-                host=self.host,
-                port=self.port
-            )
+            # Use connection string to avoid encoding issues
+            conn_string = f"host={self.host} port={self.port} dbname={self.dbname} user={self.user} password={self.password} client_encoding=UTF8"
+            self.conn = psycopg2.connect(conn_string)
             self.cursor = self.conn.cursor()
 
             # Get PostgreSQL version
@@ -49,13 +67,33 @@ class AlphaVantageDB:
         """Create database if it doesn't exist"""
         try:
             # Connect to default postgres database to create new database
-            conn = psycopg2.connect(
-                dbname='postgres',
-                user=self.user,
-                password=self.password,
-                host=self.host,
-                port=self.port
-            )
+            print(f"Attempting connection to PostgreSQL...")
+
+            # Try connection with explicit parameters to isolate encoding issue
+            try:
+                # Method 1: Using parameters dictionary
+                conn = psycopg2.connect(
+                    host=self.host,
+                    port=self.port,
+                    dbname='postgres',
+                    user=self.user,
+                    password=self.password
+                )
+            except UnicodeDecodeError as ude:
+                print(f"UnicodeDecodeError with dict params: {ude}")
+                print(f"Trying alternative connection method...")
+                # Method 2: Minimal connection string
+                try:
+                    import urllib.parse
+                    # URL encode the password in case it has special characters
+                    encoded_password = urllib.parse.quote_plus(self.password)
+                    conn_url = f"postgresql://{self.user}:{encoded_password}@{self.host}:{self.port}/postgres"
+                    conn = psycopg2.connect(conn_url)
+                except Exception as e2:
+                    print(f"Alternative method failed: {e2}")
+                    raise ude
+
+            conn.set_client_encoding('UTF8')
             conn.autocommit = True
             cursor = conn.cursor()
 
@@ -430,6 +468,8 @@ def main():
 
     except Exception as e:
         print(f"\nSetup failed: {e}")
+        print("\nFull error traceback:")
+        traceback.print_exc()
     finally:
         db.close()
 
