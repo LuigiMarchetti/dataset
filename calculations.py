@@ -41,12 +41,52 @@ shares = load_statement(DATA_DIR / "jnj_sharesoutstanding.json")
 for df in [income, balance, cashflow, shares]:
     df[:] = df.apply(pd.to_numeric, errors="coerce")
 
+# Convert shares quarterly data to annual by taking year-end values
+# Group by year and take the last available value for each year
+shares_annual = shares.groupby(shares.index.year).last()
+# Reconstruct the index to match fiscal year end dates (Dec 31)
+shares_annual.index = pd.to_datetime([f"{year}-12-31" for year in shares_annual.index])
+
 # -----------------------------
 # MERGE STATEMENTS
 # -----------------------------
-df = income.join(balance, how="inner", rsuffix="_bal")
-df = df.join(cashflow, how="inner", rsuffix="_cf")
-df = df.join(shares[["shares_outstanding_diluted"]], how="inner")
+# Use left join to keep all income statement dates, even if other data is missing
+df = income.join(balance, how="left", rsuffix="_bal")
+df = df.join(cashflow, how="left", rsuffix="_cf")
+df = df.join(shares_annual[["shares_outstanding_diluted"]], how="left")
+
+# Create column name aliases for easier access (map camelCase to snake_case for readability)
+column_mapping = {
+    # Income statement
+    'netIncome': 'net_income',
+    'totalRevenue': 'revenue',
+    'operatingIncome': 'operating_income',
+    'incomeBeforeTax': 'income_before_tax',
+    'incomeTaxExpense': 'income_tax_expense',
+
+    # Balance sheet
+    'totalAssets': 'total_assets',
+    'totalLiabilities': 'total_liabilities',
+    'totalShareholderEquity': 'total_equity',
+    'cashAndCashEquivalentsAtCarryingValue': 'cash_and_cash_equivalents',
+    'longTermDebt': 'long_term_debt',
+    'shortTermDebt': 'short_term_debt',
+
+    # Cash flow
+    'capitalExpenditures': 'capital_expenditure',
+    'dividendPayout': 'dividends_paid',
+}
+
+# Rename columns
+df = df.rename(columns=column_mapping)
+
+# Calculate total_debt if needed (long_term_debt + short_term_debt)
+if 'long_term_debt' in df.columns and 'short_term_debt' in df.columns:
+    df['total_debt'] = df['long_term_debt'].fillna(0) + df['short_term_debt'].fillna(0)
+elif 'long_term_debt' in df.columns:
+    df['total_debt'] = df['long_term_debt']
+else:
+    df['total_debt'] = 0
 
 # -----------------------------
 # DOWNLOAD HISTORICAL PRICES
@@ -130,7 +170,14 @@ final_cols = [
     "revenue_cagr", "eps_cagr"
 ]
 
+print(f"Total rows before filtering: {len(df)}")
+print(f"Date range: {df.index.min()} to {df.index.max()}")
+
+# Keep rows that have at least some key metrics (not all NaN)
 final_df = df[final_cols].dropna(how="all")
+final_df = final_df[final_df[["revenue", "net_income"]].notna().any(axis=1)]  # Must have at least revenue or net_income
+
+print(f"Rows after filtering: {len(final_df)}")
 final_df.to_csv(OUTPUT_CSV)
 
 print(f"Saved {OUTPUT_CSV}")
